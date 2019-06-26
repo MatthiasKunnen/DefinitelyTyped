@@ -25,6 +25,9 @@ d = times.sunset;
 d = times.sunsetStart;
 
 SunCalc.addTime(0.0, 'customTime', 'customTimeEnd');
+const taa = SunCalc.getTimesAtAltitude(new Date(), -6, 50.5, 30.0);
+d = taa.rise;
+d = taa.set;
 
 const pos = SunCalc.getPosition(date, latitude, longitude);
 x = pos.altitude;

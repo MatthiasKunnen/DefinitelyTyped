@@ -19,6 +19,10 @@ export interface GetTimesResult {
     sunset: Date;
     sunsetStart: Date;
 }
+export interface GetTimesAtAltitudeResult {
+    rise: Date;
+    set: Date;
+}
 export interface GetSunPositionResult {
     altitude: number;
     azimuth: number;
@@ -42,6 +46,11 @@ export interface GetMoonTimes {
 }
 
 export function getTimes(date: Date, latitude: number, longitude: number): GetTimesResult;
+
+/**
+ * Get the times at which the sun will reach the given altitude angle at the given location.
+ */
+export function getTimesAtAltitude(date: Date, angleInDegrees: number, latitude: number, longitude: number): GetTimesAtAltitudeResult;
 export function addTime(angleInDegrees: number, morningName: string, eveningName: string): void;
 export function getPosition(timeAndDate: Date, latitude: number, longitude: number): GetSunPositionResult;
 export function getMoonPosition(timeAndDate: Date, latitude: number, longitude: number): GetMoonPositionResult;
